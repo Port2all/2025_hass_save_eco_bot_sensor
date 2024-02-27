@@ -6,4 +6,4 @@ show_city_stations:
   fields:
     city:
       description: City name, as returned by show_cities service.
-      example: "Kyiv"
+      example: "Rivne"
