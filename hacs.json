@@ -1,0 +1,8 @@
+{
+  "name": "SaveEcoBot",
+  "country": "UA",
+  "render_readme": true,
+  "zip_release": true,
+  "filename": "saveecobot.zip",
+  "homeassistant":  "2022.8.0"
+}
