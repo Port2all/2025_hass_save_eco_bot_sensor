@@ -108,7 +108,7 @@ class Station(BaseModel):
 
     @property
     def slug(self):
-        return f"{DOMAIN}{self.id}_{self.cityName}".lower()
+        return f"{self.id}_{self.cityName}".lower()
 
     def sensors(self) -> List[SaveEcoBotSensorModel]:
         """
@@ -133,7 +133,7 @@ class Station(BaseModel):
 
             station_sensor = SaveEcoBotSensorModel(
                 name=f"{p.pol.name} ({self.cityName}, {self.stationName})",
-                unique_id=f"{self.slug}_{p.pol.name.lower()}",
+                unique_id=f"{DOMAIN}_{self.slug}_{p.pol.name.lower()}",
                 station_id=self.id,
                 sensor_type=p.pol,
                 state=p.value,
