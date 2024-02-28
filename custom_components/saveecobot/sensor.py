@@ -127,7 +127,7 @@ class Station(BaseModel):
                 **common_attrs
             }
             station_sensor = SaveEcoBotSensorModel(
-                name=f"{p.pol.name} ({self.cityName}, {self.stationName})",
+                name=f"saveecobot_{p.pol.name} ({self.cityName}, {self.stationName})",
                 unique_id=f"{self.slug}_{p.pol.name.lower()}",
                 station_id=self.id,
                 sensor_type=p.pol,
