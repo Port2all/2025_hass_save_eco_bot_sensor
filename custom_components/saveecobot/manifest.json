@@ -1,6 +1,6 @@
 {
-  "domain": "save_eco_bot",
-  "name": "SaveEcoBot",
+  "domain": "save_eco_bot2",
+  "name": "SaveEcoBot2",
   "documentation": "https://github.com/andr7000/hass_save_eco_bot_sensor/blob/master/README.md",
   "issue_tracker": "https://github.com/andr7000/hass_save_eco_bot_sensor/issues",
   "requirements": ["pydantic==1.6.1", "requests==2.22.0"],

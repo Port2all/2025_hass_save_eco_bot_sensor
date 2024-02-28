@@ -22,7 +22,11 @@ from homeassistant.const import (
     PERCENTAGE,
 )
 
-DOMAIN = "save_eco_bot"
+#UnitOfTemperature.CELSIUS
+#UnitOfPressure.HPA
+#
+
+DOMAIN = "save_eco_bot2"
 SENSOR_DEPRECATION_HOURS = 12
 
 _LOGGER = logging.getLogger(__name__)
@@ -104,7 +108,7 @@ class Station(BaseModel):
 
     @property
     def slug(self):
-        return f"{self.id}_{self.cityName}".lower()
+        return f"{DOMAIN}_{self.id}_{self.cityName}".lower()
 
     def sensors(self) -> List[SaveEcoBotSensorModel]:
         """
@@ -127,7 +131,7 @@ class Station(BaseModel):
                 **common_attrs
             }
             station_sensor = SaveEcoBotSensorModel(
-                name=f"saveecobot_{p.pol.name} ({self.cityName}, {self.stationName})",
+                name=f"{p.pol.name} ({self.cityName}, {self.stationName})",
                 unique_id=f"{self.slug}_{p.pol.name.lower()}",
                 station_id=self.id,
                 sensor_type=p.pol,
