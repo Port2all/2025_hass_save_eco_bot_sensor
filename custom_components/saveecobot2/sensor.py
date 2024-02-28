@@ -108,7 +108,7 @@ class Station(BaseModel):
 
     @property
     def slug(self):
-        return f"{DOMAIN}_{self.id}_{self.cityName}".lower()
+        return f"{DOMAIN}{self.id}_{self.cityName}".lower()
 
     def sensors(self) -> List[SaveEcoBotSensorModel]:
         """
@@ -131,8 +131,6 @@ class Station(BaseModel):
                 **common_attrs
             }
 
-            _LOGGER.warning(f"p.time = {p.time}")
-
             station_sensor = SaveEcoBotSensorModel(
                 name=f"{p.pol.name} ({self.cityName}, {self.stationName})",
                 unique_id=f"{self.slug}_{p.pol.name.lower()}",
@@ -140,7 +138,7 @@ class Station(BaseModel):
                 sensor_type=p.pol,
                 state=p.value,
                 device_state_attributes=attrs,
-                deprecated=datetime.datetime.now() - p.time > datetime.timedelta(hours=SENSOR_DEPRECATION_HOURS)
+                deprecated=datetime.datetime.now() - p.time.replace(tzinfo=None) > datetime.timedelta(hours=SENSOR_DEPRECATION_HOURS)
             )
             station_sensors.append(station_sensor)
         return station_sensors
