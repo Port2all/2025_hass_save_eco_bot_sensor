@@ -8,7 +8,7 @@ This piece of code adds SaveEcoBot API info with Home Assistant.
 
 ## Initial steps
 
-1. Copy this repo's files into `<home assistant config directory>/custom_components/save_eco_bot` (don't forget to [install HASS](https://www.home-assistant.io/getting-started/) first)
+1. Copy this repo's files into `<home assistant config directory>/custom_components/save_eco_bot2` (don't forget to [install HASS](https://www.home-assistant.io/getting-started/) first)
 
 2.  Enable `SaveEcoBot2` platform in `configuration.yaml`:
 ```yaml
