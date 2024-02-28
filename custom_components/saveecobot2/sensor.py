@@ -130,6 +130,9 @@ class Station(BaseModel):
                 "averaging": p.averaging,
                 **common_attrs
             }
+
+            _LOGGER.info(f"p.time = {p.time}")
+
             station_sensor = SaveEcoBotSensorModel(
                 name=f"{p.pol.name} ({self.cityName}, {self.stationName})",
                 unique_id=f"{self.slug}_{p.pol.name.lower()}",
