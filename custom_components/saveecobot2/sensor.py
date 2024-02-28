@@ -131,6 +131,8 @@ class Station(BaseModel):
                 **common_attrs
             }
 
+            _LOGGER.warning(f"{DOMAIN}_{self.slug}_{p.pol.name.lower()}")
+
             station_sensor = SaveEcoBotSensorModel(
                 name=f"{p.pol.name} ({self.cityName}, {self.stationName})",
                 unique_id=f"{DOMAIN}_{self.slug}_{p.pol.name.lower()}",
