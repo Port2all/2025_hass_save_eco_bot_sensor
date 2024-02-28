@@ -13,7 +13,7 @@ This piece of code adds SaveEcoBot API info with Home Assistant.
 2.  Enable `SaveEcoBot` platform in `configuration.yaml`:
 ```yaml
 sensor:
- - platform: save_eco_bot
+ - platform: save_eco_bot2
 ```
 3. Restart Home Asssistant
 
@@ -21,16 +21,16 @@ sensor:
 
 After initial configuration (and if SaveEcoBot data available, of course, check the logs) you'll see two new HASS services:
 
-- save_eco_bot.show_cities
-- save_eco_bot.show_city_stations
+- save_eco_bot2.show_cities
+- save_eco_bot2.show_city_stations
 
 (See the `Developer tools - Services` page of your HASS at `<HASS_url>:<HASS_PORT>/developer-tools/service`)
 
 Calling these services will give you an additional info for filtering available data. Service calls will create a notifications in notifications area:
 
-`save_eco_bot.show_cities` will show the list of available cities
+`save_eco_bot2.show_cities` will show the list of available cities
 
-`save_eco_bot.show_city_stations` will show stations for certain city. You'll have to provide the city name as shown in `save_eco_bot.show_cities` call in service parameters:
+`save_eco_bot2.show_city_stations` will show stations for certain city. You'll have to provide the city name as shown in `save_eco_bot.show_cities` call in service parameters:
 ```yaml
 city: Kyiv
 ```
@@ -57,7 +57,7 @@ All three filters are applied together, so i wouldn't recommend you to use them 
 
 ```yaml
 sensor:
- - platform: save_eco_bot
+ - platform: save_eco_bot2
    station_ids:
      - SAVEDNIPRO_3422
      - SAVEDNIPRO_1294
