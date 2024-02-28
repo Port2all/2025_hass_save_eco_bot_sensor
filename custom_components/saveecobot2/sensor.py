@@ -131,7 +131,7 @@ class Station(BaseModel):
                 **common_attrs
             }
 
-            _LOGGER.info(f"p.time = {p.time}")
+            _LOGGER.warning(f"p.time = {p.time}")
 
             station_sensor = SaveEcoBotSensorModel(
                 name=f"{p.pol.name} ({self.cityName}, {self.stationName})",
