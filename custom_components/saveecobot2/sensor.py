@@ -17,8 +17,8 @@ import aiohttp
 
 from homeassistant.const import (
     CONCENTRATION_MILLIGRAMS_PER_CUBIC_METER,
-    TEMP_CELSIUS,
-    PRESSURE_HPA,
+    UnitOfTemperature,
+    UnitOfPressure,
     PERCENTAGE,
 )
 
@@ -73,9 +73,9 @@ class Pollutant(BaseModel):
         """
         _units_translation = {
             "mg/m3": CONCENTRATION_MILLIGRAMS_PER_CUBIC_METER,
-            "Celcius": TEMP_CELSIUS,
+            "Celcius": UnitOfTemperature.CELSIUS,
             "%": PERCENTAGE,
-            "hPa": PRESSURE_HPA,
+            "hPa": UnitOfPressure.HPA,
         }
         return _units_translation[self.unit] if self.unit in _units_translation.keys() else self.unit
 
